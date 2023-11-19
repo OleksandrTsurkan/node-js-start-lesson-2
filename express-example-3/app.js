@@ -9,7 +9,7 @@ const app = express();
 
 // const corsMiddleware = cors();
 // app.use(corsMiddleware);
-app.use(cors())
+app.use(cors());
 /*
 app.use( async(req, res, next)=> {
     const {method, url} = req;
@@ -29,18 +29,18 @@ app.use((req, res, next)=> {
     next();
 })
 */
-app.get("/products", async(req, res)=> {
-    res.json([]);
+app.get("/products", async (req, res) => {
+  res.json([]);
 });
 
-app.get("/books", async(req, res)=> {
-    res.json(books);
-})
+app.get("/books", async (req, res) => {
+  res.json(books);
+});
 
-app.use((req, res)=> {
-    res.status(404).json({
-        message: "Not found"
-    })
-})
+app.use((req, res) => {
+  res.status(404).json({
+    message: "Not found",
+  });
+});
 
 app.listen(3000);
